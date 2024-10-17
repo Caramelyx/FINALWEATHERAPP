@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <title>Alyssa's Weather App</title>
   </head>
   <body>
@@ -27,14 +28,23 @@
         </form>
       </header>
       <main>
-        <div>
-          <h1 class="fira-sans-condensed-medium">Dublin</h1>
-          <p class="fira-sans-condensed-light">
-            Tuesday 14:49, scattered clouds <br />
-            Humidity: 66%, Wind: 3.13km/h
-          </p>
+        <div class="weather-app-data">
+          <div>
+            <h1 class="weather-app-city" id="city"></h1>
+            <p class="weather-app-details">
+              <span id="time"></span>,
+              <span id="description"></span>
+              <br />
+              Humidity: <strong id="humidity"></strong>, Wind:
+              <strong id="wind-speed"></strong>
+            </p>
+          </div>
+          <div class="weather-app-temperature-container">
+            <div id="icon"></div>
+            <div class="weather-app-temperature" id="temperature"></div>
+            <div class="weatehr-app-unit">°C</div>
+          </div>
         </div>
-        <div class="fira-sans-condensed-bold">☁️12°C</div>
       </main>
 
       <footer class="fira-sans-condensed-extralight">
@@ -46,5 +56,6 @@
         <a href="https://alyssa-weather.netlify.app/"> Netlify </a>
       </footer>
     </div>
+    <script src="src/index.js"></script>
   </body>
 </html>
